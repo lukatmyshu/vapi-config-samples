@@ -1,5 +1,5 @@
 {
-  "name": "Friendly Bear",
+  "name": "Friendly Bears2",
   "model": {
     "provider": "openai",
     "model": "gpt-3.5-turbo",
