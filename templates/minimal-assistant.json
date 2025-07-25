@@ -1,0 +1,10 @@
+{
+  "model": {
+    "provider": "openai",
+    "model": "gpt-3.5-turbo"
+  },
+  "voice": {
+    "provider": "deepgram",
+    "model": "nova-2"
+  }
+}

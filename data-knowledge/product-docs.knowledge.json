@@ -1,0 +1,29 @@
+{
+  "name": "Product Documentation Knowledge Base",
+  "provider": "trieve",
+  "datasetId": "dataset_product_docs_v2",
+  "apiKey": "${TRIEVE_API_KEY}",
+  "searchSettings": {
+    "searchType": "hybrid",
+    "limit": 5,
+    "scoreThreshold": 0.3,
+    "highlightResults": true,
+    "groupSize": 3
+  },
+  "chunkingStrategy": {
+    "method": "semantic",
+    "maxChunkSize": 512,
+    "chunkOverlap": 128,
+    "splitByHeading": true
+  },
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2024-03-15T10:00:00Z",
+    "categories": ["technical", "user-guide", "api-reference"]
+  },
+  "refreshSchedule": {
+    "frequency": "daily",
+    "time": "02:00",
+    "timezone": "UTC"
+  }
+}

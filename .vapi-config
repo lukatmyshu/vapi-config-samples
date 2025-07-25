@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "description": "Vapi configuration repository",
+  "schemaUrl": "https://api.vapi.ai/api-extended-json",
+  "categories": {
+    "core-resources": {
+      "name": "Core Resources",
+      "description": "Assistants, Calls, Phone Numbers, Squads"
+    },
+    "tools-integrations": {
+      "name": "Tools & Integrations",
+      "description": "API, Function, SMS, and other tool configurations"
+    },
+    "automation-workflows": {
+      "name": "Automation & Workflows",
+      "description": "Workflows, Campaigns, and automation sequences"
+    },
+    "data-knowledge": {
+      "name": "Data & Knowledge",
+      "description": "Knowledge bases and data sources"
+    }
+  },
+  "metadata": {
+    "createdAt": "2024-03-15T10:00:00Z",
+    "lastModified": "2024-03-15T10:00:00Z",
+    "maintainer": "engineering@example.com"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "phoneNumberId": "phn_1234567890abcdef",
+  "assistantId": "asst_0987654321fedcba",
+  "customerNumber": "+14155551234",
+  "type": "outbound",
+  "metadata": {
+    "campaignId": "camp_q4_2024",
+    "leadSource": "webinar",
+    "accountTier": "enterprise"
+  },
+  "recordingEnabled": true,
+  "startSpeakingPlan": {
+    "waitSeconds": 1.5,
+    "smartEndpointingEnabled": true,
+    "transcriptionEndpointingPlan": {
+      "onPunctuationSeconds": 0.5,
+      "onNoPunctuationSeconds": 1.5,
+      "onNumberSeconds": 0.5
+    }
+  },
+  "maxDurationSeconds": 1800,
+  "timeExceededMessage": "I need to wrap up our call now. Thank you for your time!"
+}

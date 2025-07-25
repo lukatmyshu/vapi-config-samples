@@ -1,0 +1,42 @@
+{
+  "name": "Q4 2024 Sales Outreach",
+  "type": "outbound",
+  "description": "End of year sales campaign targeting enterprise customers",
+  "status": "active",
+  "startDate": "2024-10-01T00:00:00Z",
+  "endDate": "2024-12-31T23:59:59Z",
+  "targetList": {
+    "source": "csv",
+    "url": "https://storage.example.com/campaigns/q4-2024-targets.csv",
+    "filters": {
+      "accountType": "enterprise",
+      "lastContactDays": {
+        "greaterThan": 90
+      }
+    }
+  },
+  "schedule": {
+    "timezone": "America/New_York",
+    "daysOfWeek": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "maxCallsPerDay": 500,
+    "pacingStrategy": "even"
+  },
+  "assistantId": "asst_sales_lead_qualifier",
+  "phoneNumberId": "phn_sales_outbound",
+  "voicemailDetection": {
+    "enabled": true,
+    "action": "leave_message",
+    "voicemailAssistantId": "asst_voicemail_dropper"
+  },
+  "callbacks": {
+    "onCallComplete": "https://api.example.com/webhooks/campaign/call-complete",
+    "onCampaignComplete": "https://api.example.com/webhooks/campaign/complete"
+  },
+  "metadata": {
+    "department": "sales",
+    "region": "north-america",
+    "productLine": "enterprise-software"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "sms",
+  "name": "SMS Confirmation",
+  "description": "Send SMS confirmations to customers",
+  "provider": "twilio",
+  "fromNumber": "+14155552000",
+  "templates": [
+    {
+      "id": "appointment_confirmation",
+      "message": "Hi {name}, this is a confirmation for your appointment on {date} at {time}. Reply CANCEL to cancel."
+    },
+    {
+      "id": "order_update",
+      "message": "Your order #{orderId} has been {status}. Track it at: {trackingUrl}"
+    }
+  ],
+  "webhookUrl": "https://api.example.com/webhooks/sms-status",
+  "maxRetries": 3
+}

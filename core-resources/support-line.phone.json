@@ -1,0 +1,44 @@
+{
+  "provider": "twilio",
+  "number": "+14155552000",
+  "name": "Main Support Line",
+  "assistantId": "asst_customer_support_main",
+  "webhookUrl": "https://api.example.com/vapi/webhook",
+  "fallbackDestination": {
+    "type": "number",
+    "number": "+14155553000",
+    "message": "Transferring you to a human agent..."
+  },
+  "voicemailEnabled": true,
+  "voicemailMessage": "We're currently closed. Please leave a message and we'll get back to you during business hours.",
+  "businessHours": {
+    "timezone": "America/Los_Angeles",
+    "schedule": [
+      {
+        "day": "monday",
+        "startTime": "09:00",
+        "endTime": "17:00"
+      },
+      {
+        "day": "tuesday",
+        "startTime": "09:00",
+        "endTime": "17:00"
+      },
+      {
+        "day": "wednesday",
+        "startTime": "09:00",
+        "endTime": "17:00"
+      },
+      {
+        "day": "thursday",
+        "startTime": "09:00",
+        "endTime": "17:00"
+      },
+      {
+        "day": "friday",
+        "startTime": "09:00",
+        "endTime": "17:00"
+      }
+    ]
+  }
+}

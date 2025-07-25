@@ -1,0 +1,28 @@
+{
+  "type": "api",
+  "name": "CRM Customer Lookup",
+  "description": "Look up customer information from the CRM system",
+  "url": "https://api.example.com/crm/customers/{customerId}",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer ${API_KEY}",
+    "Content-Type": "application/json"
+  },
+  "parameters": [
+    {
+      "name": "customerId",
+      "type": "string",
+      "description": "The customer ID or phone number",
+      "required": true
+    }
+  ],
+  "responseMapping": {
+    "name": "$.data.customer.name",
+    "accountStatus": "$.data.customer.status",
+    "lastPurchase": "$.data.customer.lastPurchaseDate"
+  },
+  "errorHandling": {
+    "retryAttempts": 2,
+    "fallbackMessage": "I'm having trouble accessing customer information right now."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Advanced Support Assistant with Multiple Tools",
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-3-opus-20240229",
+    "temperature": 0.3,
+    "maxTokens": 2000,
+    "systemPrompt": "You are an expert technical support assistant with access to multiple tools. Always verify customer identity before accessing sensitive information."
+  },
+  "voice": {
+    "provider": "eleven-labs",
+    "voiceId": "21m00Tcm4TlvDq8ikWAM",
+    "modelId": "eleven_turbo_v2",
+    "stability": 0.5,
+    "similarityBoost": 0.75,
+    "style": 0.5,
+    "useSpeakerBoost": true
+  },
+  "tools": [
+    {
+      "type": "function",
+      "name": "lookupCustomer",
+      "description": "Look up customer information by ID or phone",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string" }
+        }
+      }
+    },
+    {
+      "type": "api",
+      "name": "checkSystemStatus",
+      "url": "https://api.example.com/status",
+      "method": "GET"
+    },
+    {
+      "type": "transferCall",
+      "name": "transferToSpecialist",
+      "destinations": [
+        {
+          "type": "assistant",
+          "assistantId": "asst_tier2_specialist",
+          "message": "Transferring you to a specialist..."
+        }
+      ]
+    },
+    {
+      "type": "endCall",
+      "name": "endCallPolitely"
+    },
+    {
+      "type": "dtmf",
+      "name": "collectAccountNumber",
+      "maxDigits": 10,
+      "minDigits": 10
+    }
+  ],
+  "firstMessage": "Hello! I'm your technical support assistant. For security, could you please provide your account number or registered phone number?",
+  "context": "You are a tier 1 technical support assistant. Be professional, empathetic, and solution-focused. Always verify customer identity before discussing account details.",
+  "recordingEnabled": true,
+  "endCallFunctionEnabled": true,
+  "dialKeypadFunctionEnabled": true,
+  "fillersEnabled": true,
+  "silenceTimeoutSeconds": 30,
+  "responseDelaySeconds": 0.4,
+  "llmRequestDelaySeconds": 0.1,
+  "numWordsToInterruptAssistant": 2,
+  "maxDurationSeconds": 3600,
+  "backgroundSound": "office",
+  "backgroundDenoisingEnabled": true,
+  "modelOutputInMessagesEnabled": true,
+  "metadata": {
+    "department": "support",
+    "tier": "1",
+    "version": "2.5"
+  },
+  "tags": ["support", "technical", "tier-1", "advanced"]
+}

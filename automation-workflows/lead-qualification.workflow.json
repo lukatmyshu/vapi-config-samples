@@ -1,0 +1,70 @@
+{
+  "name": "Lead Qualification Workflow",
+  "description": "Automated workflow for qualifying and routing sales leads",
+  "trigger": {
+    "type": "webhook",
+    "webhookUrl": "https://api.example.com/workflows/lead-qualification/trigger"
+  },
+  "steps": [
+    {
+      "id": "initial_call",
+      "type": "call",
+      "assistantId": "asst_sales_lead_qualifier",
+      "phoneNumberId": "phn_sales_outbound",
+      "metadata": {
+        "step": "qualification"
+      }
+    },
+    {
+      "id": "score_lead",
+      "type": "function",
+      "function": "calculateLeadScore",
+      "inputs": {
+        "callTranscript": "{{steps.initial_call.transcript}}",
+        "callDuration": "{{steps.initial_call.duration}}",
+        "sentiment": "{{steps.initial_call.sentiment}}"
+      }
+    },
+    {
+      "id": "route_lead",
+      "type": "conditional",
+      "conditions": [
+        {
+          "if": "{{steps.score_lead.score}} >= 80",
+          "then": {
+            "type": "function",
+            "function": "assignToSalesRep",
+            "inputs": {
+              "leadId": "{{trigger.leadId}}",
+              "priority": "high"
+            }
+          }
+        },
+        {
+          "if": "{{steps.score_lead.score}} >= 50",
+          "then": {
+            "type": "function",
+            "function": "scheduleFollowUp",
+            "inputs": {
+              "leadId": "{{trigger.leadId}}",
+              "days": 7
+            }
+          }
+        },
+        {
+          "else": {
+            "type": "function",
+            "function": "addToNurtureSequence",
+            "inputs": {
+              "leadId": "{{trigger.leadId}}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "errorHandling": {
+    "onError": "continue",
+    "notificationEmail": "sales-ops@example.com"
+  }
+}

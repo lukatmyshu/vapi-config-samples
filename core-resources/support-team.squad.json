@@ -1,0 +1,33 @@
+{
+  "name": "Customer Support Squad",
+  "description": "Tier 1 and Tier 2 support agents for handling customer inquiries",
+  "members": [
+    {
+      "assistantId": "asst_support_tier1_general",
+      "weight": 3,
+      "metadata": {
+        "tier": "1",
+        "specialties": ["general", "billing", "account"]
+      }
+    },
+    {
+      "assistantId": "asst_support_tier1_technical",
+      "weight": 2,
+      "metadata": {
+        "tier": "1",
+        "specialties": ["technical", "troubleshooting"]
+      }
+    },
+    {
+      "assistantId": "asst_support_tier2_expert",
+      "weight": 1,
+      "metadata": {
+        "tier": "2",
+        "specialties": ["escalations", "complex-issues"]
+      }
+    }
+  ],
+  "routingStrategy": "weighted-random",
+  "fallbackAssistantId": "asst_support_overflow",
+  "tags": ["support", "customer-service", "inbound"]
+}

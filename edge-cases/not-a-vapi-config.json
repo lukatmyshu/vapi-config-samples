@@ -1,0 +1,12 @@
+{
+  "name": "Random JSON File",
+  "description": "This is not a Vapi config file",
+  "data": {
+    "foo": "bar",
+    "numbers": [1, 2, 3, 4, 5],
+    "nested": {
+      "key": "value"
+    }
+  },
+  "timestamp": "2024-03-15T10:00:00Z"
+}

@@ -1,0 +1,40 @@
+{
+  "type": "function",
+  "name": "bookAppointment",
+  "description": "Book an appointment in the calendar system",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "format": "date",
+        "description": "The date for the appointment"
+      },
+      "time": {
+        "type": "string",
+        "format": "time",
+        "description": "The time for the appointment"
+      },
+      "duration": {
+        "type": "integer",
+        "description": "Duration in minutes",
+        "default": 30
+      },
+      "customerName": {
+        "type": "string",
+        "description": "Name of the customer"
+      },
+      "customerPhone": {
+        "type": "string",
+        "description": "Phone number of the customer"
+      },
+      "reason": {
+        "type": "string",
+        "description": "Reason for the appointment"
+      }
+    },
+    "required": ["date", "time", "customerName", "customerPhone"]
+  },
+  "webhookUrl": "https://api.example.com/webhooks/appointments",
+  "async": false
+}

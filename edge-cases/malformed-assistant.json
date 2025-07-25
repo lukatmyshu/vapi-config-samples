@@ -1,0 +1,11 @@
+{
+  "name": "Broken Assistant Config",
+  "model": {
+    "provider": "openai"
+    // Missing required "model" field
+  },
+  "voice": {
+    // Missing required fields
+  },
+  "invalidField": "This field doesn't exist in the schema"
+}

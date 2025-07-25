@@ -1,0 +1,26 @@
+{
+  "name": "Customer Support Assistant",
+  "model": {
+    "provider": "openai",
+    "model": "gpt-4",
+    "temperature": 0.7,
+    "maxTokens": 500
+  },
+  "voice": {
+    "provider": "eleven-labs",
+    "voiceId": "21m00Tcm4TlvDq8ikWAM",
+    "stability": 0.5,
+    "similarityBoost": 0.75
+  },
+  "firstMessage": "Hello! I'm here to help with your customer support needs. How can I assist you today?",
+  "context": "You are a helpful customer support assistant for a tech company. Be friendly, professional, and solution-oriented.",
+  "recordingEnabled": true,
+  "endCallFunctionEnabled": true,
+  "dialKeypadFunctionEnabled": true,
+  "fillersEnabled": true,
+  "silenceTimeoutSeconds": 30,
+  "responseDelaySeconds": 0.5,
+  "llmRequestDelaySeconds": 0.1,
+  "numWordsToInterruptAssistant": 2,
+  "tags": ["support", "customer-service", "tier-1"]
+}

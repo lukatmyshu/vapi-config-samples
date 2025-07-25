@@ -1,0 +1,33 @@
+{
+  "name": "Sales Lead Qualifier",
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-3-sonnet-20240229",
+    "temperature": 0.5,
+    "maxTokens": 1000
+  },
+  "voice": {
+    "provider": "deepgram",
+    "model": "nova-2",
+    "language": "en",
+    "speed": 1.0
+  },
+  "firstMessage": "Hi there! I'm calling from Acme Solutions. I understand you expressed interest in our enterprise software. Do you have a few minutes to discuss your needs?",
+  "context": "You are a professional sales representative qualifying leads. Ask about their current challenges, budget, timeline, and decision-making process. Be respectful of their time.",
+  "tools": [
+    {
+      "type": "function",
+      "name": "scheduleFollowUp",
+      "description": "Schedule a follow-up call or meeting",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  ],
+  "recordingEnabled": true,
+  "tags": ["sales", "lead-qualification", "outbound"]
+}

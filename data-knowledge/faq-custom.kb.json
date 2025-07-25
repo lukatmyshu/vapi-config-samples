@@ -1,0 +1,32 @@
+{
+  "name": "FAQ Custom Knowledge Base",
+  "provider": "custom",
+  "apiEndpoint": "https://api.example.com/knowledge/search",
+  "apiKey": "${CUSTOM_KB_API_KEY}",
+  "requestFormat": {
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer ${apiKey}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "query": "{{query}}",
+      "limit": 5,
+      "filters": {
+        "type": "faq",
+        "language": "en"
+      }
+    }
+  },
+  "responseMapping": {
+    "results": "$.data.results",
+    "content": "$.content",
+    "metadata": "$.metadata",
+    "score": "$.relevance_score"
+  },
+  "caching": {
+    "enabled": true,
+    "ttl": 3600,
+    "maxSize": 1000
+  }
+}
