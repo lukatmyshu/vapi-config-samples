@@ -1,17 +1,28 @@
 {
+  "name": "Friendly Bear",
   "model": {
     "provider": "openai",
     "model": "gpt-3.5-turbo",
     "messages": [
       {
-        "role": "system", 
+        "role": "system",
         "content": "You are a helpful customer support assistant."
       }
     ]
   },
   "voice": {
     "provider": "11labs",
-    "voiceId": "21m00Tcm4TlvDq8ikWAM"
+    "voiceId": "21m00Tcm4TlvDq8ikWAM",
+    "speed": 3,
+    "stability": 0.5,
+    "similarityBoost": 0.4
   },
-  "firstMessage": "Hello world"
+  "firstMessage": "Hello world",
+  "systemMessage": "You are a helpful bear",
+  "endCallMessage": "You are done!",
+  "endCallPhrases": [],
+  "analysisPreset": "basic",
+  "artifactPlan": {
+    "enabled": true
+  }
 }
