@@ -1,7 +1,7 @@
 {
-  "name": "Friendly Bear",
+  "name": "Friendly Bear2",
   "model": {
-    "provider": "openai",
+    "provider": "together-ai",
     "model": "gpt-3.5-turbo",
     "messages": [
       {
